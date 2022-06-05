@@ -1,0 +1,124 @@
+:root {
+  --color-content-background: #545353;
+  --color-neutral-900: #2b2b2b;
+  --color-neutral-inverted: #fff;
+  --color-primary-blue: #5795f3;
+  --color-link: #bad4fb;
+
+  --layout-girdle: 87.5em;
+  --layout-max-content-container: 50em;
+
+  --typography-lead: 1.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-inverted);
+  display: flex;
+  flex-direction: column;
+  font: 100%/1.5 "Open Sans", sans-serif;
+  height: 100vh;
+  justify-content: space-between;
+  margin: 0;
+  padding: 1.5rem;
+}
+
+a {
+  color: var(--color-link);
+}
+
+header,
+footer,
+.content-girdle {
+  margin: 0 auto;
+  max-width: var(--layout-girdle);
+}
+
+header,
+footer {
+  flex: 0 0 10%;
+}
+
+main {
+  flex: 1 1 60%;
+}
+
+.mdn-docs-logo {
+  height: 105px;
+  width: 361px;
+}
+
+.content-girdle {
+  max-width: var(--layout-max-content-container);
+}
+
+main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+main::before {
+  animation: slow-rotate 240s linear infinite forwards;
+  background: transparent url("../media/mandala.svg") center center no-repeat;
+  content: "";
+  height: 100%;
+  opacity: 0.1;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+main li {
+  margin-bottom: 0.75rem;
+}
+
+.lead {
+  font-size: var(--typography-lead);
+}
+
+footer {
+  margin: initial;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media screen and (min-width: 48em) {
+  footer {
+    margin: 0 auto;
+  }
+
+  footer ul {
+    display: flex;
+    flex-direction: initial;
+    gap: 2rem;
+  }
+}
+
+@keyframes slow-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main {
+    animation: none;
+  }
+}

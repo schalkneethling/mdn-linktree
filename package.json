@@ -1,0 +1,16 @@
+{
+  "name": "mdn-linktree",
+  "version": "1.0.0",
+  "description": "A single page listing MDN Web Docs community open spaces online",
+  "main": "index.js",
+  "keywords": [
+    "mdn",
+    "mdn web docs",
+    "community"
+  ],
+  "author": "Mozilla",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
+}
